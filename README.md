@@ -142,7 +142,7 @@ python apply_delta.py --base ./llama-7b-hf --target ./Patent-LLaMA-chat-7B --del
 本项目只是开始，我们将持续更新专利大模型的研究进展。
 
 ## 引用：
-@misc{Patent-llama,<br>
+@misc{Patent-LLaMA,<br>
   author={Jiabin Wang, Hao Lu, Xinpeng Liu, Xuan Zhang},<br>
   title = {Patent-LLaMA},<br>
   year = {2023},<br>
