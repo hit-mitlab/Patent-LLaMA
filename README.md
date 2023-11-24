@@ -72,11 +72,7 @@
 | Patent-LLaMA-chat-7B | 对话模型 | 通用指令数据，专利任务数据 | 2023.11.13 |
 
 ## 评估：
-### 公开benmark：
-C-Eval 数据集: 是一个全面的中文基础模型评测数据集，涵盖了 52 个学科和四个难度的级别。我们将模型在C-eval上进行测试。
-| 模型  | STEM  | Social Sciences | Humanities  | Others | Average  | Average（Hard） |
-| --- | --- | --- | --- | --- | --- | --- |
-| Patent-LLaMA-chat | 30.4 | 35.4 | 31.2 | 31.6 | 31.8 | 26.5 |
+
 
 ### 专利特定任务：
 针对专利特定任务，我们开源了专利关键信息抽取任务，专利标题生成任务，专利翻译任务的相关评测集，用于衡量模型在专利相关任务的性能。
@@ -100,6 +96,12 @@ C-Eval 数据集: 是一个全面的中文基础模型评测数据集，涵盖�
 | 模型 | recall (解决问题) | precision (解决问题) | F1 (解决问题) | recall (技术手段) | precision (技术手段) | F1 (技术手段) | recall (实施效果) | precision (实施效果) | F1 (实施效果) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Patent-LLaMA-chat | 0.628 | 0.627 | 0.628 | 0.455 | 0.463 | 0.459 | 0.412 | 0.444 | 0.428 |
+
+### 公开benmark：
+C-Eval 数据集: 是一个全面的中文基础模型评测数据集，涵盖了 52 个学科和四个难度的级别。我们将模型在C-eval上进行测试。
+| 模型  | STEM  | Social Sciences | Humanities  | Others | Average  | Average（Hard） |
+| --- | --- | --- | --- | --- | --- | --- |
+| Patent-LLaMA-chat | 30.4 | 35.4 | 31.2 | 31.6 | 31.8 | 26.5 |
 ## 使用说明
 由于LLaMA权重的许可限制，该模型不能用于商业用途，考虑到LLaMA权重的许可证限制，我们无法直接发布完整的模型权重。<br>
 步骤1：获取LLaMA原始权重并转成Hugging Face Transformers模型格式（简称为hf格式），可参考转换脚本[convert_llama_weights_to_hf.py](https://github.com/wangjiabin928/Patent-LLaMA/blob/main/convert_llama_weights_to_hf.py)，将该代码复制粘贴保存到本地。<br>
@@ -122,8 +124,8 @@ python apply_delta.py --base {hf格式的LLaMA权重路径} --target {保存路�
 ```
 python apply_delta.py --base ./llama-7b-hf --target ./Patent-LLaMA-chat-7B --delta ./Patent-LLaMA-chat-7B-delta
 ```
-## 项目参与者：
-本项目由来自哈尔滨工业大学的王家彬，卢昊，刘欣鹏，张烜四位合作开发中,指导教师为杨沐昀教授。
+## 项目研发：
+哈尔滨工业大学计算机科学与技术学院机器智能与翻译研究室团队王家彬，卢昊，刘欣鹏，张烜合作研发，实验室教师团队指导。哈尔滨市阳光惠远知识产权代理有限公司、佛科院-哈工大人工智能基础模型及应用联合实验室提供支持。
 ## 局限性、使用限制与免责声明：
 本模型可能存在以下问题：
 1. 对于有危害性的指令不具备充足的辨别能力，可能产生有害的言论。
